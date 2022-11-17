@@ -246,7 +246,7 @@ ifeq ($(storage_engine), rocksdb)
   STORAGE_ENGINE_PATH=$(ROCKSDB_PATH)
   INCS+=-I${ROCKSDB_PATH}/include -I${ROCKSDB_PATH}
   LIBS:= ${ROCKSDB_LIBA} ${SNAPPY_LIBA} ${LIBS}
-  CXXFLAGS+=-D__USE_ROCKSDB__ -std=c++11 -Wno-error=deprecated-copy -Wno-error=stringop-truncation
+  CXXFLAGS+=-D__USE_ROCKSDB__ -std=c++11 -Wno-error=deprecated-copy -Wno-error=stringop-truncation -Werror=pessimizing-move
 else
 ifeq ($(storage_engine), wiredtiger)
   STORAGE_ENGINE=$(WIREDTIGER_LIBA)
